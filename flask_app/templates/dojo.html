@@ -8,15 +8,26 @@
     <title>Home Page</title>
 </head>
 <body>
-    <h1>New Dojo</h1>
-    <form action="/update_dojo" method="post">
+    <div class="d-flex justify-content-around">
         <div>
-            <label for="name">New Dojo: </label>
-            <input type="text" name="name">
+            <h1>New Dojo</h1>
+            <form action="/update_dojo" method="post">
+                <div>
+                    <label for="name">New Dojo: </label>
+                    <input type="text" name="name">
+                </div>
+                <div>
+                    <input type="submit" value="Create">
+                </div>
+            </form>
         </div>
         <div>
-            <input type="submit" value="Create">
+            <h1>All Dojos</h1>
+            {% for dojo in all_dojos %}
+                <p>{{ dojo.name }}</p>
+            {% endfor %}
+            <a href="">Add Ninja</a>
         </div>
-    </form>
+    </div>
 </body>
 </html>
