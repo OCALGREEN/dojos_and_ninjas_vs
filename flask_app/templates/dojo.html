@@ -9,9 +9,9 @@
 </head>
 <body>
     <div class="d-flex justify-content-around">
-        <div>
+        <div>   <!--Container for Creating a New Dojo-->
             <h1>New Dojo</h1>
-            <form action="/update_dojo" method="post">
+            <form action="/update_dojo" method="post">  <!--will route to create a new dojo-->
                 <div>
                     <label for="name">New Dojo: </label>
                     <input type="text" name="name">
@@ -21,12 +21,14 @@
                 </div>
             </form>
         </div>
-        <div>
+        <div>    
             <h1>All Dojos</h1>
             {% for dojo in all_dojos %}
-                <p>{{ dojo.name }}</p>
+                <div>
+                    <a href="/show/dojo/{{ dojo.id }}/ninja">{{ dojo.name }}</a>
+                </div>
             {% endfor %}
-            <a href="">Add Ninja</a>
+            <a href="/ninjas">Add Ninja</a>
         </div>
     </div>
 </body>
